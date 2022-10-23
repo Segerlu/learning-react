@@ -1,0 +1,42 @@
+#titleBar {
+    background-color: lightskyblue;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin:2px;
+}
+
+.titleLogo {
+    position: absolute;
+    height:3em;
+    filter: brightness(25%);
+    margin: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .titleLogo {
+      animation: titleLogoSpin infinite 5s alternate-reverse;
+    }
+  }
+
+#leftLogo {
+    left: 1em;
+}
+
+#rightLogo {
+    left: calc(100% - 4em); 
+    top: 0em;
+}
+
+@keyframes titleLogoSpin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

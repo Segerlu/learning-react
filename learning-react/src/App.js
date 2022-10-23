@@ -1,12 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [isShown, setIsShown] = useState(true);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <button onClick={() => setIsShown(!isShown)}><img src={logo} className="App-logo" alt="logo" itemType='button' /></button>
+
+        {isShown && (
+          <div>
+      <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -17,6 +24,11 @@ function App() {
         >
           Learn React
         </a>
+        </div>
+        )}
+
+        {isShown && (<div></div>)}
+
       </header>
     </div>
   );
